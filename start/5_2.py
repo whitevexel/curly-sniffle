@@ -7,8 +7,10 @@ from selenium.webdriver.chrome.service import Service
 service = Service(executable_path=ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
-driver.get("https://www.freeconferencecall.com/login")
+driver.get("https://hyperskill.org/tracks")
 
-driver.find_element("id", "loginformsubmit").click()
+time.sleep(3)
+
+driver.find_elements("class name", "nav-link")[2].click()
 
 time.sleep(3)
