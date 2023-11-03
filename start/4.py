@@ -7,18 +7,6 @@ from selenium.webdriver.chrome.service import Service
 service = Service(executable_path=ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
-driver.get("https://yandex.ru")
+driver.get("https://www.freeconferencecall.com/login")
 
-time.sleep(7)
-
-driver.back()
-
-time.sleep(3)
-
-driver.forward()
-
-time.sleep(3)
-
-driver.refresh()
-
-time.sleep(3)
+print(driver.find_element("id", "loginformsubmit"))

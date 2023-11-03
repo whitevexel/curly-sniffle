@@ -7,18 +7,15 @@ from selenium.webdriver.chrome.service import Service
 service = Service(executable_path=ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
-driver.get("https://yandex.ru")
+driver.get("https://en.wikipedia.org/")
 
-time.sleep(7)
+url = driver.current_url
+print("URL -", url)
+assert url == "https://en.wikipedia.org/", "Error in url"
 
-driver.back()
+current_title = driver.title
+print("Title :", current_title)
+assert current_title == "Wikipedia", "Error in Title"
 
-time.sleep(3)
-
-driver.forward()
-
-time.sleep(3)
-
-driver.refresh()
 
 time.sleep(3)
