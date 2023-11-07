@@ -9,6 +9,12 @@ driver = webdriver.Chrome(service=service)
 
 driver.get("https://www.freeconferencecall.com/global/pl")
 
-driver.find_element("id", "loginformsubmit").click()
+login_button = driver.find_element("xpath", "//a[@id='login-desktop']")
+login_button.click()
 
-time.sleep(3)
+email_field = driver.find_element("xpath", "//input[@id='login_email']")
+email_field.send_keys("log.in@ya.ru")
+
+print(email_field.get_attribute ("value"))
+
+time.sleep(10)
